@@ -1,0 +1,362 @@
+[1mdiff --git a/Test/Array (1).java b/Test/Array (1).java[m
+[1mdeleted file mode 100644[m
+[1mindex 7d8d9ea..0000000[m
+[1m--- a/Test/Array (1).java[m	
+[1m+++ /dev/null[m
+[36m@@ -1,25 +0,0 @@[m
+[31m-public class Array{[m
+[31m-	public static void main(String[] args) {[m
+[31m-[m
+[31m-		int []array = {1, 5, 9};[m
+[31m-		//\\ А зачем проходить по массиву в 2 цикла ?[m
+[31m-		//\\ Тебе достаточно одного. Того, который у тебя является внутренним.[m
+[31m-		//\\ Просто в таком случае получается, что при массиве в 10 элементов ты 10 раз выводишь что это не\арифметическая прогрессия и 10 раз проходишь по нему[m
+[31m-[m
+[31m-		for (int j = 0; j < array.length; j++){[m
+[31m-			//\\ если ты хочешь получить разницу между 2 и 1 элементами, то нужно использовать индексы 1 и 0, ведь индексация элементов в массиве идет с 0[m
+[31m-			double test = array[2] - array[1];[m
+[31m-			boolean flag = true;[m
+[31m-			//\\ вот этот цикл верный, и, по сути, кроме него ничего больше и не нужно[m
+[31m-			for (int i=0; i<array.length-1; i++){[m
+[31m-				if (array[i+1] - array[i] != test)[m
+[31m-					flag = false;[m
+[31m-				//\\ А еще прямо здесь можно выходить из цикла через break, ведь если хоть 1 элемент не подходит под прогрессию, то незачем проверять все остальные[m
+[31m-			}[m
+[31m-			if (!flag)[m
+[31m-				System.out.println ("Не арифметическая прогрессия!");[m
+[31m-			else[m
+[31m-				System.out.println("Арифметическая прогрессия");[m
+[31m-		}[m
+[31m-	}[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/Test/Bubble.java b/Test/Bubble.java[m
+[1mdeleted file mode 100644[m
+[1mindex 4293408..0000000[m
+[1m--- a/Test/Bubble.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,38 +0,0 @@[m
+[31m-import java.util.Arrays;[m
+[31m-[m
+[31m-/**[m
+[31m- * Created by Дмитрий on 19.02.2015.[m
+[31m- */[m
+[31m-public class Bubble {[m
+[31m-    public static void main(String[] args) {[m
+[31m-        int[] arr = {422, 425, 326, 98, 542, 43, 34, 34, 43, 34, 53, 463};[m
+[31m-        int count = 0;[m
+[31m-        boolean isStop = true;[m
+[31m-        for (int k = 0; k < arr.length; k++) {[m
+[31m-            for (int n = 0; n < arr.length - 1; n++) {[m
+[31m-                count++;[m
+[31m-                if (arr[n] > arr[n + 1]) {[m
+[31m-                    isStop = false;[m
+[31m-                    int temp = arr[n];[m
+[31m-                    arr[n] = arr[n + 1];[m
+[31m-                    arr[n + 1] = temp;[m
+[31m-[m
+[31m-                }[m
+[31m-[m
+[31m-            }[m
+[31m-            if (isStop) {[m
+[31m-                break;[m
+[31m-            }[m
+[31m-            if (k == 4) {[m
+[31m-                for (int m = 0; m < arr.length; m++) {[m
+[31m-                    System.out.print(arr[m] + " ");[m
+[31m-[m
+[31m-                }[m
+[31m-                System.out.println();[m
+[31m-                System.out.println(count);[m
+[31m-            }[m
+[31m-        }[m
+[31m-//       System.out.print(Arrays.toString(arr));[m
+[31m-[m
+[31m-    }[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/Test/Calculator.java b/Test/Calculator.java[m
+[1mdeleted file mode 100644[m
+[1mindex 604abca..0000000[m
+[1m--- a/Test/Calculator.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,87 +0,0 @@[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+[31m-public class Calculator {[m
+[31m-[m
+[31m-	public static void main(String[] args) {[m
+[31m-	System.out.println("��� ���������� ��������� ������ Exit");[m
+[31m-	[m
+[31m-	double num1 = 0;[m
+[31m-	double num2 = 0;[m
+[31m-    String op = null;[m
+[31m-    [m
+[31m-    double result = 0;[m
+[31m-	[m
+[31m-	Scanner scan = new Scanner (System.in);[m
+[31m-	String str = null;	[m
+[31m-	[m
+[31m-	while(true){[m
+[31m-		[m
+[31m-		System.out.println("������� ������ ����� ");[m
+[31m-		if(scan.hasNext()) {[m
+[31m-			str = scan.nextLine();			[m
+[31m-			[m
+[31m-			 [m
+[31m-			if(str.equals("Exit")){                [m
+[31m-				break;[m
+[31m-			}                                     [m
+[31m-			[m
+[31m-			num1 = new Double(str);			[m
+[31m-			[m
+[31m-		}[m
+[31m-		[m
+[31m-		System.out.println("�������� �������� +, -, *, /");[m
+[31m-		if(scan.hasNext()) {[m
+[31m-			op = scan.nextLine();[m
+[31m-			[m
+[31m-			if(op.equals("Exit")){                [m
+[31m-				break; [m
+[31m-			}									[m
+[31m-		}[m
+[31m-		[m
+[31m-		System.out.println("������� ������ �����");[m
+[31m-		if(scan.hasNext()) {[m
+[31m-			str = scan.nextLine();[m
+[31m-			[m
+[31m-			if(str.equals("Exit")){               [m
+[31m-				break;[m
+[31m-			}										[m
+[31m-			[m
+[31m-			num2 = new Double(str);[m
+[31m-		}[m
+[31m-		[m
+[31m-	//	if("+".equals(op)){[m
+[31m-	//		result = num1 + num2;[m
+[31m-	//	}[m
+[31m-	//	else if("-".equals(op)){[m
+[31m-	//		result = num1 - num2;[m
+[31m-	//	}[m
+[31m-	//	else if("/".equals(op)){[m
+[31m-	//		result = num1 / num2;[m
+[31m-	//	}[m
+[31m-	//	else if("*".equals(op)){[m
+[31m-	//		result = num1 * num2;[m
+[31m-	//	}[m
+[31m-	[m
+[31m-		[m
+[31m-		switch(op){[m
+[31m-			case "+":[m
+[31m-				result = num1 + num2;[m
+[31m-				break;[m
+[31m-			case "-":[m
+[31m-				result = num1 - num2;[m
+[31m-				break;[m
+[31m-			case "*":[m
+[31m-				result = num1 * num2;[m
+[31m-				break;[m
+[31m-			case "/":[m
+[31m-				result = num1 / num2;[m
+[31m-				break;[m
+[31m-		}[m
+[31m-		[m
+[31m-		[m
+[31m-		System.out.println("��������� ����������: " + result);[m
+[31m-	}[m
+[31m-	[m
+[31m-	scan.close();[m
+[31m-  }[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/Test/binary.txt b/Test/binary.txt[m
+[1mdeleted file mode 100644[m
+[1mindex f70d7bb..0000000[m
+[1m--- a/Test/binary.txt[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-42[m
+\ No newline at end of file[m
+[1mdiff --git a/Test/calcdz.java b/Test/calcdz.java[m
+[1mdeleted file mode 100644[m
+[1mindex ad417cf..0000000[m
+[1m--- a/Test/calcdz.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-package calc;[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+[31m-public class calcdz {[m
+[31m-	public static void main (String args[])[m
+[31m-	{[m
+[31m-		int a,b,x;[m
+[31m-		  int sign;[m
+[31m-		System.out.println("\t\t�����������");[m
+[31m-		System.out.println(" 1 (��������)");[m
+[31m-		System.out.println(" 2 (���������)");[m
+[31m-		System.out.println(" 3 (���������)");[m
+[31m-		System.out.println(" 4 (�������)");[m
+[31m-		System.out.println("\t�������� ��������");[m
+[31m-		Scanner scn= new Scanner(System.in);[m
+[31m-		sign=scn.nextInt();[m
+[31m-		System.out.println("������� ������ �����");[m
+[31m-		a=scn.nextInt();[m
+[31m-		System.out.println("������� ������ �����");[m
+[31m-		b=scn.nextInt();[m
+[31m-		[m
+[31m-		[m
+[31m-		[m
+[31m-		if(sign==1)[m
+[31m-		{[m
+[31m-			x=a+b;[m
+[31m-			System.out.println("����� "+x);[m
+[31m-		}[m
+[31m-		if(sign==2)[m
+[31m-		{[m
+[31m-		x=a-b;[m
+[31m-		System.out.println("����� "+x);[m
+[31m-		}[m
+[31m-		if(sign==3)[m
+[31m-		{[m
+[31m-			x=a*b;[m
+[31m-			System.out.println("����� "+x);[m
+[31m-		}[m
+[31m-		if(sign==4)[m
+[31m-		{[m
+[31m-			x=a/b;[m
+[31m-			System.out.println("����� "+x);[m
+[31m-		}[m
+[31m-	[m
+[31m-			[m
+[31m-			[m
+[31m-		[m
+[31m-		[m
+[31m-		[m
+[31m-		[m
+[31m-		[m
+[31m-		[m
+[31m-	}[m
+[31m-[m
+[31m-}[m
+[1mdiff --git a/Test/crazy homework (1).java b/Test/crazy homework (1).java[m
+[1mdeleted file mode 100644[m
+[1mindex 8a337bd..0000000[m
+[1m--- a/Test/crazy homework (1).java[m	
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-package com.company;[m
+[31m-[m
+[31m-[m
+[31m-import java.util.Arrays;[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+[31m-public class Main {[m
+[31m-[m
+[31m-    public static void main(String[] args) {[m
+[31m-        // write your code here[m
+[31m-        Scanner scan = new Scanner(System.in);[m
+[31m-        int[] arr;[m
+[31m-        arr = new int[10];[m
+[31m-        for (int i = 0; i < 10; i++) {[m
+[31m-            System.out.println("Enter a new value " + i);[m
+[31m-            arr[i] = scan.nextInt();[m
+[31m-[m
+[31m-        }[m
+[31m-        System.out.println(Arrays.toString(arr) + " original array");[m
+[31m-        //end of the first part homework[m
+[31m-        int t = 0;[m
+[31m-        int k;[m
+[31m-        int count;[m
+[31m-        for (int c = 0; c < arr.length - 1; c++) {[m
+[31m-            count = 0;[m
+[31m-            for (k = 0; k < arr.length - 1; k++) {[m
+[31m-                if (arr[k] > arr[k + 1]) {[m
+[31m-                    t = arr[k];[m
+[31m-                    arr[k] = arr[k + 1];[m
+[31m-                    arr[k + 1] = t;[m
+[31m-                    count++;[m
+[31m-                }[m
+[31m-            }[m
+[31m-            System.out.println(Arrays.toString(arr));[m
+[31m-         [m
+[31m-            if (count == 0) {[m
+[31m-                break;[m
+[31m-            }[m
+[31m-        }[m
+[31m-// end of the second part homework[m
+[31m-        //find 80[m
+[31m-        int s = 0;[m
+[31m-        int f = arr.length;[m
+[31m-        while (arr[(s + f) / 2] != 80) {[m
+[31m-            if (arr[(s + f) / 2] < 80) {[m
+[31m-                s = (s + f) / 2;[m
+[31m-            } else {[m
+[31m-                f = (f + s) / 2;[m
+[31m-            }[m
+[31m-        }System.out.println("80 is placed on a position"+ "   " +(s + f) / 2 );[m
+[31m-		//end of the third part[m
+[31m-    }[m
+[31m-      }[m
+[31m-[m
+[31m-[m
+[1mdiff --git a/Test/crazy homework.java b/Test/crazy homework.java[m
+[1mdeleted file mode 100644[m
+[1mindex 8a337bd..0000000[m
+[1m--- a/Test/crazy homework.java[m	
+[1m+++ /dev/null[m
+[36m@@ -1,55 +0,0 @@[m
+[31m-package com.company;[m
+[31m-[m
+[31m-[m
+[31m-import java.util.Arrays;[m
+[31m-import java.util.Scanner;[m
+[31m-[m
+[31m-public class Main {[m
+[31m-[m
+[31m-    public static void main(String[] args) {[m
+[31m-        // write your code here[m
+[31m-        Scanner scan = new Scanner(System.in);[m
+[31m-        int[] arr;[m
+[31m-        arr = new int[10];[m
+[31m-        for (int i = 0; i < 10; i++) {[m
+[31m-            System.out.println("Enter a new value " + i);[m
+[31m-            arr[i] = scan.nextInt();[m
+[31m-[m
+[31m-        }[m
+[31m-        System.out.println(Arrays.toString(arr) + " original array");[m
+[31m-        //end of the first part homework[m
+[31m-        int t = 0;[m
+[31m-        int k;[m
+[31m-        int count;[m
+[31m-        for (int c = 0; c < arr.length - 1; c++) {[m
+[31m-            count = 0;[m
+[31m-            for (k = 0; k < arr.length - 1; k++) {[m
+[31m-                if (arr[k] > arr[k + 1]) {[m
+[31m-                    t = arr[k];[m
+[31m-                    arr[k] = arr[k + 1];[m
+[31m-                    arr[k + 1] = t;[m
+[31m-                    count++;[m
+[31m-                }[m
+[31m-            }[m
+[31m-            System.out.println(Arrays.toString(arr));[m
+[31m-         [m
+[31m-            if (count == 0) {[m
+[31m-                break;[m
+[31m-            }[m
+[31m-        }[m
+[31m-// end of the second part homework[m
+[31m-        //find 80[m
+[31m-        int s = 0;[m
+[31m-        int f = arr.length;[m
+[31m-        while (arr[(s + f) / 2] != 80) {[m
+[31m-            if (arr[(s + f) / 2] < 80) {[m
+[31m-                s = (s + f) / 2;[m
+[31m-            } else {[m
+[31m-                f = (f + s) / 2;[m
+[31m-            }[m
+[31m-        }System.out.println("80 is placed on a position"+ "   " +(s + f) / 2 );[m
+[31m-		//end of the third part[m
+[31m-    }[m
+[31m-      }[m
+[31m-[m
+[31m-[m
